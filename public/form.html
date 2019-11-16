@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<h1 align="center">Postal Rate Calculator</h1>
+<body>
+    <form align="center" action="/getRate" method="get">
+       Type a weight (oz.): <input type="text" name="weight" id="weight" onInput = "validation(this.value, this.id)"><br>
+        <span>The button will de gone if a user put a weight that is not between 0.1 to 13</span><br>
+       <select name="postal_option">
+           <option value="Letters (Stamped)">Letters (Stamped)</option>
+           <option value="Letters (Metered)">Letters (Metered)</option>
+           <option value="Large Envelopes (Flats)s">Large Envelopes (Flats)</option>
+           <option value="First-Class Package Service">First-Class Package Service</option>
+       </select>
+       <input type="submit" value="Calculate" id="weightbutton_setting" class = "buttonhide">
+    </form>
+
+    <script type="text/javascript">
+       function hide() {
+           var buttonhide1 = document.getElementsByClassName("buttonhide");
+		
+		   for(var i=0; i<buttonhide1.length; i++) {
+               buttonhide1[i].style["visibility"] = "hidden";
+		}
+       }
+       function validation(value, id) {
+          var validation = "no_error"
+          switch(id){
+			case "weight":
+				if (!isNaN(Number(value)) && value <= 13 && value != 0) {
+					validation = "error";
+				}
+				break;
+			default:
+				validation = "error";
+            }
+            if (validation === "error") {
+			document.getElementById(id+"button_setting").style.visibility = "visible";
+			document.getElementById(id).focus();
+		}	else {
+			document.getElementById(id+"button_setting").style.visibility = "hidden";
+		}
+		
+		return validation;
+       }
+    </script>
+</body>
+</html>
