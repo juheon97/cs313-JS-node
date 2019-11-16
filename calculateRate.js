@@ -36,6 +36,50 @@ function letterConvert(weight) {
     return rate;
 }
 
+function getFlatsCost(weight, type) {
+    var rate
+    if (type == "Large Envelopes (Flats)" && weight <= 1){
+        rate = 1.00
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 1 && weight <=2) {
+        rate = 1.15
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 2 && weight <=3) {
+        rate = 1.30
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 3 && weight <=4) {
+        rate = 1.45
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 4 && weight <=5) {
+        rate = 1.60
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 5 && weight <=6) {
+        rate = 1.75
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 6 && weight <=7) {
+        rate = 1.90
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 7 && weight <=8) {
+        rate = 2.05
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 8 && weight <=9) {
+        rate = 2.20
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 9 && weight <=10) {
+        rate = 2.35
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 10 && weight <=11) {
+        rate = 2.50
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 11 && weight <=12) {
+        rate = 2.65
+    }
+    else if (type=="Large Envelopes (Flats)" && weight > 12 && weight <=13) {
+        rate = 2.80
+    }
+    return rate
+}
+
 function getPackageCost(weight, type) {
     var rate;
     if (type == "First-Class Package Service" && weight <= 4) {
