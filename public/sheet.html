@@ -80,67 +80,67 @@
                 }
                 break
             case "health":
-				if (!isNaN(Number(value))) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "phealth":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "damage":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "pdamage":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) &&value > 0) {
 					validation = "no_error";
 				}
                 break
             case "hregen":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "phregen":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "armor":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "parmor":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "magicr":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "pmagicr":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "mv":
-				if (!isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "speed":
-				if (isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break
             case "pspeed":
-				if (isNaN(Number(value)) && value <= 0) {
+				if (!isNaN(Number(value)) && value > 0) {
 					validation = "no_error";
 				}
                 break    
