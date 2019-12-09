@@ -20,17 +20,23 @@
 
     <p align="center">working on the page</p>
     <form>
-        <div>name: <input type="text" size = "50" \required></div>
-        <div>subname: <input type="text" size = "50" \required></div>
+        <div>name: <input type="text" size = "50" id="cname" name="cname" onInput = "validation(this.value, this.id)" \required></div>
+        <div>subname: <input type="text" id="sname" name="sname" size = "50" onInput = "validation(this.value, this.id)" \required></div>
         <div>Image: <input type="text" size = "50" \required></div>
-        <div>Health: <input type="text" size = "50" \required></div>
-        <div>Attack Damage: <input type="text" size = "50" \required></div>
-        <div>Health Regen: <input type="text" size = "50" \required></div>
-        <div>Armor: <input type="text" size = "50" \required></div>
-        <div>Magic Resist: <input type="text" size = "50" \required></div>
-        <div>Movement Speed: <input type="text" size = "50" \required></div>
-        <div>Attack Speed: <input type="text" size = "50" \required></div>
-    </form>
+        <div>Health: <input type="text" id="health" name="health" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Health per level: <input type="text" id="phealth" name="phealth" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Attack Damage: <input type="text" id="damage" name="damage" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Attack Damage per level: <input type="text" id="pdamage" name="pdamage" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Health Regen: <input type="text" id="hregen" name="hregen" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Health Regen per level: <input type="text" id="phregen" name="phregen" size = "50" onInput = "validation(this.value, this.id)"\required></div>
+        <div>Armor: <input type="text" id="armor" name="armor" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Armor per level: <input type="text" id="parmor" name="parmor" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Magic Resist: <input type="text" id="magicr" name="magicr" size = "50" onInput = "validation(this.value, this.id)"\required></div>
+        <div>Magic Resist per level: <input type="pmagicr" id="pmagicr" name="cname" size = "50" onInput = "validation(this.value, this.id)"\required></div>
+        <div>Movement Speed: <input type="text" id="mv" name="mv" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Attack Speed: <input type="text" id="speed" name="speed" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+        <div>Attack Speed per level: <input type="text" id="pspeed" name="pspeed" size = "50" onInput = "validation(this.value, this.id)" \required></div>
+    
     Defense<br/>
     <input type="checkbox"> Health<br/></td>
     <input type="checkbox"> Magic Resist<br/></td>
@@ -48,7 +54,107 @@
     <input type="checkbox"> Mana Regen<br/></td>
     Misc.<br/>
     <input type="checkbox"> Movement<br/></td>
-    
+    <input type="submit" value="Submit The Sheet" id="button_setting" class = "buttonhide">
+   </form>    
 
+    <script type="text/javascript">
+        function hide() {
+            var buttonhide1 = document.getElementsByClassName("buttonhide");
+         
+            for(var i=0; i<buttonhide1.length; i++) {
+                buttonhide1[i].style["visibility"] = "hidden";
+         }
+        }
+        function validation(value, id) {
+           let charCheck =  /^[A-Za-z. ]{1,30}$/
+           let validation = "error"
+           switch(id){
+             case "cname":
+                 if (charCheck.test(value)) {
+                     validation = "no_error";
+                 }
+                 break
+            case "sname":
+                if (charCheck.test(value)) {
+                    validation = "no_error"
+                }
+                break
+            case "health":
+				if (!isNaN(Number(value))) {
+					validation = "no_error";
+				}
+                break
+            case "phealth":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "damage":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "pdamage":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "hregen":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "phregen":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "armor":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "parmor":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "magicr":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "pmagicr":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "mv":
+				if (!isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "speed":
+				if (isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break
+            case "pspeed":
+				if (isNaN(Number(value)) && value <= 0) {
+					validation = "no_error";
+				}
+                break    
+             default:
+                 validation = "no_error";
+             }
+             if (validation === "no_error") {
+             document.getElementById("button_setting").style.visibility = "visible";
+         }	else {
+             document.getElementById("button_setting").style.visibility = "hidden";
+         }
+         
+         return validation;
+        }
+     </script>
 </body>
 </html>
