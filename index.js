@@ -1,11 +1,9 @@
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-const {Pool} = require('pg');
-const DATABASE_URL = 'postgres://uubbjvfgoqyruq:2e8107d076c68abe18c4af2adcaa7bae5ffe365801c7faa45ef67dadbe10a21c@ec2-174-129-203-86.compute-1.amazonaws.com:5432/d9gpeunfu4tkme?ssl=true'
 const express = require('express')
 const calculateRate = require("./calculateRate.js")
-const app = express()
-const pool = Pool({connectionString: DATABASE_URL})
+const db = require("./callDB.js")
 
+const app = express()
 
 app.set('port', process.env.PORT || 5000)
    .use(express.static(__dirname + '/public'))
